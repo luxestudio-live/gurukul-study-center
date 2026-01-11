@@ -5,6 +5,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
+import { getImageUrl } from "@/lib/image-url"
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -37,7 +38,7 @@ export function Navbar() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3">
-            <Image src="/logo.png" alt="Gurukul Study Center Logo" width={50} height={50} className="object-contain" />
+            <Image src={getImageUrl("/logo.png")} alt="Gurukul Study Center Logo" width={50} height={50} className="object-contain" />
             <div className="text-xl sm:text-2xl font-serif font-bold text-primary">Gurukul Study Center</div>
           </Link>
 
