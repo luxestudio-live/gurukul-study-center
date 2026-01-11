@@ -3,6 +3,7 @@ import { Footer } from "@/components/footer"
 import { ScrollReveal } from "@/components/scroll-reveal"
 import { Card, CardContent } from "@/components/ui/card"
 import { Award, BookOpen, GraduationCap, Users, Target, TrendingUp, Heart, Lightbulb } from "lucide-react"
+import { getImageUrl } from "@/lib/image-url"
 
 export default function AboutPage() {
   const highlights = [
@@ -89,7 +90,7 @@ export default function AboutPage() {
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl transform rotate-3"></div>
                 <img
-                  src="/professional-indian-male-professor-teaching-mathem.jpg"
+                  src={getImageUrl("/professional-indian-male-professor-teaching-mathem.jpg")}
                   alt="Prof. Sambhaji Bugade"
                   className="relative rounded-2xl shadow-2xl w-full aspect-[4/5] object-cover"
                 />

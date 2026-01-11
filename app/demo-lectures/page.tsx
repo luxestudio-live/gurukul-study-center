@@ -6,8 +6,7 @@ import { ScrollReveal } from "@/components/scroll-reveal"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Lock, Play, Clock, BookOpen } from "lucide-react"
-import { useState } from "react"
-
+import { useState } from "react"import { getImageUrl } from "@/lib/image-url"
 export default function DemoLecturesPage() {
   const [selectedBoard, setSelectedBoard] = useState("SSC")
 
@@ -193,7 +192,7 @@ export default function DemoLecturesPage() {
                 <Card className="border-none shadow-lg overflow-hidden group cursor-pointer hover:shadow-xl transition-all card-hover">
                   <div className="relative aspect-video bg-gradient-to-br from-primary/20 via-secondary/20 to-accent/20">
                     <img
-                      src="/placeholder.svg"
+                      src={getImageUrl("/placeholder.svg")}
                       alt={lecture.title}
                       className="w-full h-full object-cover opacity-20"
                     />

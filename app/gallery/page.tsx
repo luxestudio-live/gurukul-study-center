@@ -3,6 +3,7 @@ import { Footer } from "@/components/footer"
 import { ScrollReveal } from "@/components/scroll-reveal"
 import { Card, CardContent } from "@/components/ui/card"
 import { Award, TrendingUp, Users } from "lucide-react"
+import { getImageUrl } from "@/lib/image-url"
 
 export default function GalleryPage() {
   const results = [
@@ -113,7 +114,7 @@ export default function GalleryPage() {
                 <Card className="border-none shadow-lg overflow-hidden group hover:shadow-xl transition-all duration-300 card-hover">
                   <div className="relative aspect-video overflow-hidden">
                     <img
-                      src="/placeholder.svg"
+                      src={getImageUrl("/placeholder.svg")}
                       alt={item.title}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                     />
