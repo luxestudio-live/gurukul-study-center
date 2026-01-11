@@ -6,7 +6,9 @@ import { ScrollReveal } from "@/components/scroll-reveal"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Lock, Play, Clock, BookOpen } from "lucide-react"
-import { useState } from "react"import { getImageUrl } from "@/lib/image-url"
+import { useState } from "react"
+import { getImageUrl } from "@/lib/image-url"
+
 export default function DemoLecturesPage() {
   const [selectedBoard, setSelectedBoard] = useState("SSC")
 
