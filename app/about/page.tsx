@@ -90,7 +90,7 @@ export default function AboutPage() {
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl transform rotate-3"></div>
                 <img
-                  src={getImageUrl("/professional-indian-male-professor-teaching-mathem.jpg")}
+                  src={getImageUrl("/SirPhoto.jpeg")}
                   alt="Prof. Sambhaji Bugade"
                   className="relative rounded-2xl shadow-2xl w-full aspect-[4/5] object-cover"
                 />
