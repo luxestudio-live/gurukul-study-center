@@ -1,9 +1,9 @@
 1:"$Sreact.fragment"
 2:I[3888,["/gurukul-study-center/_next/static/chunks/5da6dfa1850e802d.js","/gurukul-study-center/_next/static/chunks/c4964899fe458d94.js"],"ClientPageRoot"]
-3:I[9934,["/gurukul-study-center/_next/static/chunks/3b4ad80d543c9af7.js","/gurukul-study-center/_next/static/chunks/d6a49055ed16a8f1.js","/gurukul-study-center/_next/static/chunks/b3fa793ad4e7f2a6.js","/gurukul-study-center/_next/static/chunks/d2456641679cb991.js"],"default"]
+3:I[9934,["/gurukul-study-center/_next/static/chunks/3b4ad80d543c9af7.js","/gurukul-study-center/_next/static/chunks/d6a49055ed16a8f1.js","/gurukul-study-center/_next/static/chunks/33638c226de1e40c.js","/gurukul-study-center/_next/static/chunks/d2456641679cb991.js"],"default"]
 6:I[30611,["/gurukul-study-center/_next/static/chunks/5da6dfa1850e802d.js","/gurukul-study-center/_next/static/chunks/c4964899fe458d94.js"],"OutletBoundary"]
 7:"$Sreact.suspense"
-0:{"buildId":"US0VwhKK2RjZP3N89srU5","rsc":["$","$1","c",{"children":[["$","$L2",null,{"Component":"$3","serverProvidedParams":{"searchParams":{},"params":{},"promises":["$@4","$@5"]}}],[["$","script","script-0",{"src":"/gurukul-study-center/_next/static/chunks/b3fa793ad4e7f2a6.js","async":true}],["$","script","script-1",{"src":"/gurukul-study-center/_next/static/chunks/d2456641679cb991.js","async":true}]],["$","$L6",null,{"children":["$","$7",null,{"name":"Next.MetadataOutlet","children":"$@8"}]}]]}],"loading":null,"isPartial":false}
+0:{"buildId":"oclK1dHxAcHToBhSZNEst","rsc":["$","$1","c",{"children":[["$","$L2",null,{"Component":"$3","serverProvidedParams":{"searchParams":{},"params":{},"promises":["$@4","$@5"]}}],[["$","script","script-0",{"src":"/gurukul-study-center/_next/static/chunks/33638c226de1e40c.js","async":true}],["$","script","script-1",{"src":"/gurukul-study-center/_next/static/chunks/d2456641679cb991.js","async":true}]],["$","$L6",null,{"children":["$","$7",null,{"name":"Next.MetadataOutlet","children":"$@8"}]}]]}],"loading":null,"isPartial":false}
 4:{}
 5:"$0:rsc:props:children:0:props:serverProvidedParams:params"
 8:null
