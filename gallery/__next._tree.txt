@@ -1,5 +1,5 @@
 :HL["/gurukul-study-center/_next/static/chunks/e8b1980faaa37e80.css","style"]
-:HL["/gurukul-study-center/_next/static/chunks/02a9dc515cba02d4.css","style"]
+:HL["/gurukul-study-center/_next/static/chunks/a070379a3897ac99.css","style"]
 :HL["/gurukul-study-center/_next/static/media/2a65768255d6b625-s.p.d19752fb.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/gurukul-study-center/_next/static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/gurukul-study-center/gsc.jpeg","image"]
@@ -12,4 +12,4 @@
 :HL["/gurukul-study-center/gsc7.jpeg","image"]
 :HL["/gurukul-study-center/gsc8.jpeg","image"]
 :HL["/gurukul-study-center/gsc9.jpeg","image"]
-0:{"buildId":"VTTkIfciGQvStI-Q0WJym","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"gallery","paramType":null,"paramKey":"gallery","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
+0:{"buildId":"SkS2_-2oJI7plTlth8_JG","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"gallery","paramType":null,"paramKey":"gallery","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
