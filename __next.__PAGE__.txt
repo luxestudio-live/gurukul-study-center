@@ -1,9 +1,9 @@
 1:"$Sreact.fragment"
 2:I[3888,["/gurukul-study-center/_next/static/chunks/5da6dfa1850e802d.js","/gurukul-study-center/_next/static/chunks/c4964899fe458d94.js"],"ClientPageRoot"]
-3:I[31713,["/gurukul-study-center/_next/static/chunks/fa39ac29eac6ec09.js","/gurukul-study-center/_next/static/chunks/280fea61ed03b574.js","/gurukul-study-center/_next/static/chunks/7d7139e5044c2b2b.js"],"default"]
+3:I[31713,["/gurukul-study-center/_next/static/chunks/fa39ac29eac6ec09.js","/gurukul-study-center/_next/static/chunks/efc195c9a1ef2967.js","/gurukul-study-center/_next/static/chunks/7d7139e5044c2b2b.js"],"default"]
 6:I[30611,["/gurukul-study-center/_next/static/chunks/5da6dfa1850e802d.js","/gurukul-study-center/_next/static/chunks/c4964899fe458d94.js"],"OutletBoundary"]
 7:"$Sreact.suspense"
-0:{"buildId":"VcfObDGS7M_uxGcMjHb2s","rsc":["$","$1","c",{"children":[["$","$L2",null,{"Component":"$3","serverProvidedParams":{"searchParams":{},"params":{},"promises":["$@4","$@5"]}}],[["$","script","script-0",{"src":"/gurukul-study-center/_next/static/chunks/280fea61ed03b574.js","async":true}],["$","script","script-1",{"src":"/gurukul-study-center/_next/static/chunks/7d7139e5044c2b2b.js","async":true}]],["$","$L6",null,{"children":["$","$7",null,{"name":"Next.MetadataOutlet","children":"$@8"}]}]]}],"loading":null,"isPartial":false}
+0:{"buildId":"Aa06LKKKdXJvl1uQfQ_ww","rsc":["$","$1","c",{"children":[["$","$L2",null,{"Component":"$3","serverProvidedParams":{"searchParams":{},"params":{},"promises":["$@4","$@5"]}}],[["$","script","script-0",{"src":"/gurukul-study-center/_next/static/chunks/efc195c9a1ef2967.js","async":true}],["$","script","script-1",{"src":"/gurukul-study-center/_next/static/chunks/7d7139e5044c2b2b.js","async":true}]],["$","$L6",null,{"children":["$","$7",null,{"name":"Next.MetadataOutlet","children":"$@8"}]}]]}],"loading":null,"isPartial":false}
 4:{}
 5:"$0:rsc:props:children:0:props:serverProvidedParams:params"
 8:null
