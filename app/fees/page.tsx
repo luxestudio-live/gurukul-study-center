@@ -176,54 +176,6 @@ export default function FeesPage() {
         </div>
       </section>
 
-      {/* Payment Info */}
-      <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
-        <div className="container mx-auto max-w-4xl">
-          <ScrollReveal>
-            <Card className="border-none shadow-xl">
-              <CardContent className="p-6 sm:p-8">
-                <h3 className="text-xl sm:text-2xl font-serif font-bold mb-6 text-center">Payment Information</h3>
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                  <div className="bg-muted/50 rounded-lg p-5">
-                    <h4 className="font-semibold mb-3 flex items-center gap-2">
-                      <CheckCircle2 className="text-primary" size={18} />
-                      Payment Methods
-                    </h4>
-                    <ul className="space-y-2 text-sm text-muted-foreground">
-                      <li>• Bank Transfer / UPI</li>
-                      <li>• Debit / Credit Card</li>
-                      <li>• Cash Payment</li>
-                      <li>• Cheque / DD</li>
-                    </ul>
-                  </div>
-                  
-                  <div className="bg-muted/50 rounded-lg p-5">
-                    <h4 className="font-semibold mb-3 flex items-center gap-2">
-                      <CheckCircle2 className="text-primary" size={18} />
-                      Special Offers
-                    </h4>
-                    <ul className="space-y-2 text-sm text-muted-foreground">
-                      <li>• 10% sibling discount</li>
-                      <li>• Early bird yearly discount</li>
-                      <li>• Referral rewards program</li>
-                      <li>• EMI options available</li>
-                    </ul>
-                  </div>
-                </div>
-
-                <div className="bg-primary/5 rounded-lg p-5 border border-primary/20">
-                  <p className="text-sm text-center">
-                    <strong>Note:</strong> All fees are subject to GST as applicable. Fees once paid are non-refundable. 
-                    Registration fee of ₹500 is applicable for new admissions.
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
-          </ScrollReveal>
-        </div>
-      </section>
-
       {/* CTA Section */}
       <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10">
         <div className="container mx-auto max-w-4xl text-center">
