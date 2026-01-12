@@ -349,10 +349,7 @@ export default function DemoLecturesPage() {
             </Card>
           </ScrollReveal>
         </div>
-      )}v>
-          </ScrollReveal>
-        </div>
-      </section>
+      )}
 
       <Footer />
     </div>
