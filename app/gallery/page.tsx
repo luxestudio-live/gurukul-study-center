@@ -19,36 +19,16 @@ export default function GalleryPage() {
   ]
 
   const galleryImages = [
-    {
-      title: "Interactive Classes",
-      description: "Students engaging with Prof. Bugade during live online & offline sessions",
-      image: "online+mathematics+class+students+learning",
-    },
-    {
-      title: "Problem Solving Session",
-      description: "Collaborative learning with step-by-step explanations",
-      image: "teacher+solving+mathematics+problem+whiteboard",
-    },
-    {
-      title: "Student Achievement Day",
-      description: "Celebrating our top performers of 2024",
-      image: "students+celebrating+exam+success+achievement",
-    },
-    {
-      title: "Geometry Workshop",
-      description: "Special workshop on advanced geometry concepts",
-      image: "geometry+mathematics+tools+compass+protractor",
-    },
-    {
-      title: "Algebra Practice",
-      description: "Students working through algebraic problems",
-      image: "mathematical+equations+algebra+on+notebook",
-    },
-    {
-      title: "Parent Teacher Meeting",
-      description: "Regular interactions to discuss student progress",
-      image: "parent+teacher+meeting+discussion+education",
-    },
+    { image: "gsc.jpeg", title: "Gurukul Study Center", description: "Our vibrant learning environment" },
+    { image: "gsc1.jpeg", title: "Mathematics Excellence", description: "Students achieving their best" },
+    { image: "gsc2.jpeg", title: "Learning Together", description: "Collaborative study sessions" },
+    { image: "gsc3.jpeg", title: "Success Stories", description: "Celebrating academic achievements" },
+    { image: "gsc4.jpeg", title: "Interactive Sessions", description: "Engaging classroom experiences" },
+    { image: "gsc5.jpeg", title: "Expert Guidance", description: "Prof. Bugade's teaching excellence" },
+    { image: "gsc6.jpeg", title: "Student Community", description: "Building strong foundations together" },
+    { image: "gsc7.jpeg", title: "Achievement Day", description: "Recognizing outstanding performers" },
+    { image: "gsc8.jpeg", title: "Learning Journey", description: "Every step towards success" },
+    { image: "gsc9.jpeg", title: "Proud Moments", description: "Celebrating milestones with students" },
   ]
 
   const stats = [
@@ -108,20 +88,24 @@ export default function GalleryPage() {
               Glimpses of our vibrant learning community and special moments
             </p>
           </ScrollReveal>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {galleryImages.map((item, index) => (
-              <ScrollReveal key={index} delay={index * 100}>
-                <Card className="border-none shadow-lg overflow-hidden group hover:shadow-xl transition-all duration-300 card-hover">
-                  <div className="relative aspect-video overflow-hidden">
+              <ScrollReveal key={index} delay={index * 50}>
+                <Card className="border-none shadow-lg overflow-hidden group hover:shadow-2xl transition-all duration-500 card-hover">
+                  <div className="relative aspect-[4/3] overflow-hidden bg-gradient-to-br from-primary/5 to-accent/5">
                     <img
-                      src={getImageUrl("/placeholder.svg")}
+                      src={getImageUrl(`/${item.image}`)}
                       alt={item.title}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                      className="w-full h-full object-cover group-hover:scale-110 group-hover:rotate-1 transition-all duration-700 ease-out"
                     />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
-                  <CardContent className="p-4 sm:p-5">
-                    <h3 className="font-semibold mb-1 text-sm sm:text-base">{item.title}</h3>
-                    <p className="text-xs sm:text-sm text-muted-foreground text-pretty">{item.description}</p>
+                  <CardContent className="p-5 relative">
+                    <div className="absolute -top-4 right-4 w-8 h-8 bg-primary rounded-full shadow-lg flex items-center justify-center text-white text-xs font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      {index + 1}
+                    </div>
+                    <h3 className="font-bold mb-2 text-base group-hover:text-primary transition-colors duration-300">{item.title}</h3>
+                    <p className="text-sm text-muted-foreground text-pretty leading-relaxed">{item.description}</p>
                   </CardContent>
                 </Card>
               </ScrollReveal>
