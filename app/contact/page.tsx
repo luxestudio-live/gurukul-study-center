@@ -14,18 +14,39 @@ export default function ContactPage() {
 
   const handleContactSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
+    e.stopPropagation()
     setIsSubmitting(true)
     
     const form = e.currentTarget
     const formData = new FormData(form)
     
-    try {
-      await fetch(form.action, {
-        method: 'POST',
-        body: formData,
-        mode: 'no-cors'
-      })
-      
+    // Submit in background using iframe trick
+    const iframe = document.createElement('iframe')
+    iframe.style.display = 'none'
+    iframe.name = 'hidden-form-iframe'
+    document.body.appendChild(iframe)
+    
+    const tempForm = document.createElement('form')
+    tempForm.action = form.action
+    tempForm.method = 'POST'
+    tempForm.target = 'hidden-form-iframe'
+    
+    formData.forEach((value, key) => {
+      const input = document.createElement('input')
+      input.type = 'hidden'
+      input.name = key
+      input.value = value.toString()
+      tempForm.appendChild(input)
+    })
+    
+    document.body.appendChild(tempForm)
+    tempForm.submit()
+    
+    // Show success after short delay
+    setTimeout(() => {
+      document.body.removeChild(tempForm)
+      document.body.removeChild(iframe)
+      setIsSubmitting(false)
       setSubmitSuccess(true)
       form.reset()
       
@@ -33,12 +54,7 @@ export default function ContactPage() {
       setTimeout(() => {
         setSubmitSuccess(false)
       }, 5000)
-    } catch (error) {
-      console.error('Error:', error)
-      setSubmitSuccess(true)
-    } finally {
-      setIsSubmitting(false)
-    }
+    }, 1000)
   }
   return (
     <div className="min-h-screen">
