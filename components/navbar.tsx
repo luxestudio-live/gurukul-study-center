@@ -23,6 +23,8 @@ export function Navbar() {
     { href: "/", label: "Home" },
     { href: "/about", label: "About Us" },
     { href: "/courses", label: "Courses" },
+    { href: "/timetable", label: "Timetable" },
+    { href: "/fees", label: "Fees" },
     { href: "/demo-lectures", label: "Demo Lectures" },
     { href: "/gallery", label: "Gallery & Results" },
     { href: "/contact", label: "Contact Us" },

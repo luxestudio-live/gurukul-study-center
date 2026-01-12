@@ -36,6 +36,22 @@ export function Footer() {
               </li>
               <li>
                 <Link
+                  href="/timetable"
+                  className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                >
+                  Timetable
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/fees"
+                  className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                >
+                  Fees
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/demo-lectures"
                   className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors"
                 >
