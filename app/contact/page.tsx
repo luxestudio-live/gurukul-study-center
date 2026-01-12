@@ -23,13 +23,13 @@ export default function ContactPage() {
     // Submit in background using iframe trick
     const iframe = document.createElement('iframe')
     iframe.style.display = 'none'
-    iframe.name = 'hidden-form-iframe'
+    iframe.name = 'hidden-form-iframe-contact'
     document.body.appendChild(iframe)
     
     const tempForm = document.createElement('form')
     tempForm.action = form.action
     tempForm.method = 'POST'
-    tempForm.target = 'hidden-form-iframe'
+    tempForm.target = 'hidden-form-iframe-contact'
     
     formData.forEach((value, key) => {
       const input = document.createElement('input')
@@ -42,19 +42,23 @@ export default function ContactPage() {
     document.body.appendChild(tempForm)
     tempForm.submit()
     
-    // Show success after short delay
+    // Show success after longer delay to ensure submission completes
     setTimeout(() => {
-      document.body.removeChild(tempForm)
-      document.body.removeChild(iframe)
       setIsSubmitting(false)
       setSubmitSuccess(true)
       form.reset()
+      
+      // Clean up after showing success
+      setTimeout(() => {
+        document.body.removeChild(tempForm)
+        document.body.removeChild(iframe)
+      }, 500)
       
       // Reset success message after 5 seconds
       setTimeout(() => {
         setSubmitSuccess(false)
       }, 5000)
-    }, 1000)
+    }, 2000)
   }
   return (
     <div className="min-h-screen">
