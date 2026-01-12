@@ -3,6 +3,7 @@ import type { Metadata } from "next"
 import { Playfair_Display, Inter } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { ScrollToTop } from "@/components/scroll-to-top"
+import { FloatingEnquiry } from "@/components/floating-enquiry"
 import "./globals.css"
 
 const playfair = Playfair_Display({
@@ -35,6 +36,7 @@ export default function RootLayout({
       <body className={`font-sans antialiased`}>
         {/* Added ScrollToTop component to handle page navigation */}
         <ScrollToTop />
+        <FloatingEnquiry />
         {children}
         <Analytics />
       </body>
