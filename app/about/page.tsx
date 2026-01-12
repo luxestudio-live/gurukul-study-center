@@ -7,7 +7,7 @@ import { getImageUrl } from "@/lib/image-url"
 
 export default function AboutPage() {
   const highlights = [
-    { icon: GraduationCap, label: "Mathematics Expert", value: "Expert Qualification" }
+    { icon: GraduationCap, label: "Mathematics Expert", value: "Expert Qualification" },
     { icon: Award, label: "42 Years", value: "Teaching Experience" },
     { icon: Users, label: "5000+", value: "Students Taught" },
     { icon: BookOpen, label: "100%", value: "Dedication" },
