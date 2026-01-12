@@ -44,9 +44,7 @@ export function FloatingEnquiry() {
     setTimeout(() => {
       document.body.removeChild(tempForm)
       document.body.removeChild(iframe)
-      // Open YouTube in new window
-      window.open('https://www.youtube.com/@bugadesirsgurukul2025', '_blank')
-      // Redirect to demo lectures page
+      // Redirect to demo lectures page only
       window.location.href = '/demo-lectures'
     }, 1000)
   }
