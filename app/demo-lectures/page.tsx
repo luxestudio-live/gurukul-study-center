@@ -13,6 +13,7 @@ export default function DemoLecturesPage() {
   const [selectedBoard, setSelectedBoard] = useState("SSC")
   const [showEnquiryForm, setShowEnquiryForm] = useState(false)
   const [hasSubmittedEnquiry, setHasSubmittedEnquiry] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
   useEffect(() => {
     // Check if user has already submitted enquiry
@@ -32,11 +33,44 @@ export default function DemoLecturesPage() {
     }
   }
 
-  const handleFormSubmit = (e: React.FormEvent) => {
-    // Mark as submitted in localStorage
-    localStorage.setItem('enquirySubmitted', 'true')
-    setHasSubmittedEnquiry(true)
-    // Form will redirect to YouTube via FormSubmit
+  const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    e.stopPropagation()
+    setIsSubmitting(true)
+    
+    const form = e.currentTarget
+    const formData = new FormData(form)
+    
+    // Submit in background using iframe trick
+    const iframe = document.createElement('iframe')
+    iframe.style.display = 'none'
+    iframe.name = 'hidden-form-iframe'
+    document.body.appendChild(iframe)
+    
+    const tempForm = document.createElement('form')
+    tempForm.action = form.action
+    tempForm.method = 'POST'
+    tempForm.target = 'hidden-form-iframe'
+    
+    formData.forEach((value, key) => {
+      const input = document.createElement('input')
+      input.type = 'hidden'
+      input.name = key
+      input.value = value.toString()
+      tempForm.appendChild(input)
+    })
+    
+    document.body.appendChild(tempForm)
+    tempForm.submit()
+    
+    // Mark as submitted and redirect to YouTube after short delay
+    setTimeout(() => {
+      document.body.removeChild(tempForm)
+      document.body.removeChild(iframe)
+      localStorage.setItem('enquirySubmitted', 'true')
+      setHasSubmittedEnquiry(true)
+      window.location.href = 'https://www.youtube.com/@bugadesirsgurukul2025'
+    }, 1000)
   }
 
   const lectures = {
@@ -339,8 +373,14 @@ export default function DemoLecturesPage() {
                       <option>Class 10 - CBSE</option>
                     </select>
                   </div>
-                  <Button type="submit" className="w-full">
-                    Submit & Watch Demos
+                  <Button type="submit" className="w-full" disabled={isSubmitting}>
+                    {isSubmitting ? (
+                      <span className="flex items-center gap-2">
+                        <span className="animate-spin">⏳</span> Submitting...
+                      </span>
+                    ) : (
+                      'Submit & Watch Demos'
+                    )}
                   </Button>
                 </form>
               </CardContent>
