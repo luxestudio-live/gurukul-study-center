@@ -161,6 +161,59 @@ export default function ContactPage() {
         </div>
       </section>
 
+      {/* Android App Section */}
+      <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary/5 via-secondary/5 to-accent/5">
+        <div className="container mx-auto max-w-5xl">
+          <ScrollReveal>
+            <Card className="border-none shadow-xl overflow-hidden">
+              <CardContent className="p-0">
+                <div className="grid md:grid-cols-2 gap-0">
+                  <div className="p-6 sm:p-8 bg-gradient-to-br from-primary/10 to-secondary/10 flex flex-col justify-center">
+                    <h3 className="text-xl sm:text-2xl font-bold mb-3">Self-Learning Option</h3>
+                    <p className="text-sm sm:text-base text-muted-foreground mb-6">
+                      Can't join live classes? Download our Android app and purchase individual courses to learn at your own pace.
+                    </p>
+                    <ul className="space-y-2 text-sm sm:text-base mb-6">
+                      <li className="flex items-center gap-2">
+                        <CheckCircle2 className="text-primary" size={16} />
+                        <span>Pre-recorded video lectures</span>
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <CheckCircle2 className="text-primary" size={16} />
+                        <span>Study materials included</span>
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <CheckCircle2 className="text-primary" size={16} />
+                        <span>Practice questions</span>
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <CheckCircle2 className="text-primary" size={16} />
+                        <span>Learn at your own pace</span>
+                      </li>
+                    </ul>
+                    <Button 
+                      size="lg" 
+                      className="w-full sm:w-auto"
+                      onClick={() => window.open('https://play.google.com/store/apps/details?id=com.zscygm.lkmvii', '_blank')}
+                    >
+                      <span className="mr-2">📱</span> Download Android App
+                    </Button>
+                  </div>
+                  
+                  <div className="bg-gradient-to-br from-accent/20 to-primary/20 p-6 sm:p-8 flex items-center justify-center">
+                    <div className="text-center">
+                      <div className="text-7xl sm:text-8xl mb-4">📱</div>
+                      <h4 className="text-lg sm:text-xl font-bold mb-2">Available on</h4>
+                      <p className="text-base font-semibold text-primary">Google Play Store</p>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </ScrollReveal>
+        </div>
+      </section>
+
       <Footer />
     </div>
   )

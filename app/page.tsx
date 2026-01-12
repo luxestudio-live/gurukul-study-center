@@ -5,7 +5,7 @@ import { Footer } from "@/components/footer"
 import { ScrollReveal } from "@/components/scroll-reveal"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Video, Award, Users, Clock, Target, CheckCircle2, Lock, Star, ArrowRight } from "lucide-react"
+import { Video, Award, Users, Clock, Target, CheckCircle2, Lock, Star, ArrowRight, FileText, Brain } from "lucide-react"
 import { useState } from "react"
 
 export default function HomePage() {
@@ -268,6 +268,79 @@ export default function HomePage() {
               </ScrollReveal>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Self-Learning App Section */}
+      <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-muted/30">
+        <div className="container mx-auto max-w-6xl">
+          <ScrollReveal>
+            <div className="text-center mb-8 sm:mb-12">
+              <h2 className="text-2xl sm:text-3xl font-serif font-bold mb-4">
+                Prefer Self-Learning?
+              </h2>
+              <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto">
+                Download our Android app and purchase courses at your own pace
+              </p>
+            </div>
+          </ScrollReveal>
+          
+          <ScrollReveal delay={100}>
+            <Card className="border-none shadow-xl overflow-hidden">
+              <CardContent className="p-0">
+                <div className="grid md:grid-cols-2 gap-0">
+                  <div className="p-6 sm:p-8 bg-gradient-to-br from-primary/5 to-secondary/5 flex flex-col justify-center">
+                    <div className="mb-6">
+                      <div className="inline-flex items-center gap-2 bg-primary/10 px-4 py-2 rounded-full mb-4">
+                        <Star className="text-primary" size={18} />
+                        <span className="text-sm font-medium">Self-Paced Learning</span>
+                      </div>
+                      <h3 className="text-xl sm:text-2xl font-bold mb-4">Learn Anytime, Anywhere</h3>
+                      <ul className="space-y-3 text-sm sm:text-base text-muted-foreground">
+                        <li className="flex items-start gap-3">
+                          <Video className="text-primary shrink-0 mt-1" size={18} />
+                          <span>Pre-recorded video lectures</span>
+                        </li>
+                        <li className="flex items-start gap-3">
+                          <FileText className="text-primary shrink-0 mt-1" size={18} />
+                          <span>Study materials & notes</span>
+                        </li>
+                        <li className="flex items-start gap-3">
+                          <Brain className="text-primary shrink-0 mt-1" size={18} />
+                          <span>Topic-wise practice questions</span>
+                        </li>
+                        <li className="flex items-start gap-3">
+                          <CheckCircle2 className="text-primary shrink-0 mt-1" size={18} />
+                          <span>Buy individual courses</span>
+                        </li>
+                      </ul>
+                    </div>
+                    <Button 
+                      size="lg" 
+                      className="w-full sm:w-auto"
+                      onClick={() => window.open('https://play.google.com/store/apps/details?id=com.zscygm.lkmvii', '_blank')}
+                    >
+                      <span className="mr-2">📱</span> Download Android App
+                    </Button>
+                  </div>
+                  
+                  <div className="bg-gradient-to-br from-accent/20 to-primary/20 p-6 sm:p-8 flex items-center justify-center">
+                    <div className="text-center">
+                      <div className="bg-background rounded-2xl p-8 shadow-xl">
+                        <div className="text-6xl sm:text-7xl mb-4">📱</div>
+                        <h4 className="text-lg sm:text-xl font-bold mb-2">Google Play Store</h4>
+                        <p className="text-sm text-muted-foreground mb-4">Available Now</p>
+                        <div className="inline-flex items-center gap-2 bg-muted px-4 py-2 rounded-lg">
+                          <span className="text-xl">⭐</span>
+                          <span className="font-semibold text-sm">Individual Courses</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </ScrollReveal>
         </div>
       </section>
 
