@@ -82,9 +82,8 @@ export default function ContactPage() {
               <Card className="border-none shadow-xl">
                 <CardContent className="p-6 sm:p-8">
                   <h2 className="text-xl sm:text-2xl font-serif font-bold mb-4 sm:mb-6">Send us a Message</h2>
-                  <form action="https://formsubmit.co/your-email@example.com" method="POST" className="space-y-3 sm:space-y-4">
-                    <input type="hidden" name="_subject" value="New Contact Form Submission - Gurukul Study Center" />
-                    <input type="hidden" name="_template" value="table" />
+                  <form action="https://script.google.com/macros/s/AKfycbxMgEb4mB6SHj99zYz-AYvkzXsAeh-l3jpRrBAk3YMbqR4FYbEMV8ac-bZUCIK4pxGa/exec" method="POST" target="_blank" className="space-y-3 sm:space-y-4">
+                    <input type="hidden" name="form_type" value="Contact Form" />
                     <div>
                       <label className="block text-xs sm:text-sm font-medium mb-1.5 sm:mb-2">Full Name</label>
                       <input

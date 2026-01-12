@@ -283,10 +283,8 @@ export default function DemoLecturesPage() {
                     ✕
                   </button>
                 </div>
-                <form action="https://formsubmit.co/your-email@example.com" method="POST" onSubmit={handleFormSubmit} className="space-y-3 sm:space-y-4">
-                  <input type="hidden" name="_next" value="https://www.youtube.com/@bugadesirsgurukul2025" />
-                  <input type="hidden" name="_subject" value="New Demo Access Request - Gurukul Study Center" />
-                  <input type="hidden" name="_template" value="table" />
+                <form action="https://script.google.com/macros/s/AKfycbxMgEb4mB6SHj99zYz-AYvkzXsAeh-l3jpRrBAk3YMbqR4FYbEMV8ac-bZUCIK4pxGa/exec" method="POST" onSubmit={handleFormSubmit} className="space-y-3 sm:space-y-4">
+                  <input type="hidden" name="form_type" value="Demo Access Request" />
                   <div>
                     <label className="block text-xs sm:text-sm font-medium mb-1.5 sm:mb-2">Full Name</label>
                     <input
