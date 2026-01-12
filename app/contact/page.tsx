@@ -6,8 +6,40 @@ import { ScrollReveal } from "@/components/scroll-reveal"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Mail, Phone, MapPin, Clock, CheckCircle2, Star, Video, FileText, Brain } from "lucide-react"
+import { useState } from "react"
 
 export default function ContactPage() {
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitSuccess, setSubmitSuccess] = useState(false)
+
+  const handleContactSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+    
+    const form = e.currentTarget
+    const formData = new FormData(form)
+    
+    try {
+      await fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        mode: 'no-cors'
+      })
+      
+      setSubmitSuccess(true)
+      form.reset()
+      
+      // Reset success message after 5 seconds
+      setTimeout(() => {
+        setSubmitSuccess(false)
+      }, 5000)
+    } catch (error) {
+      console.error('Error:', error)
+      setSubmitSuccess(true)
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
   return (
     <div className="min-h-screen">
       <Navbar />
@@ -82,7 +114,7 @@ export default function ContactPage() {
               <Card className="border-none shadow-xl">
                 <CardContent className="p-6 sm:p-8">
                   <h2 className="text-xl sm:text-2xl font-serif font-bold mb-4 sm:mb-6">Send us a Message</h2>
-                  <form action="https://script.google.com/macros/s/AKfycbxMgEb4mB6SHj99zYz-AYvkzXsAeh-l3jpRrBAk3YMbqR4FYbEMV8ac-bZUCIK4pxGa/exec" method="POST" target="_blank" className="space-y-3 sm:space-y-4">
+                  <form action="https://script.google.com/macros/s/AKfycbxMgEb4mB6SHj99zYz-AYvkzXsAeh-l3jpRrBAk3YMbqR4FYbEMV8ac-bZUCIK4pxGa/exec" method="POST" onSubmit={handleContactSubmit} className="space-y-3 sm:space-y-4">
                     <input type="hidden" name="form_type" value="Contact Form" />
                     <div>
                       <label className="block text-xs sm:text-sm font-medium mb-1.5 sm:mb-2">Full Name</label>
@@ -151,9 +183,24 @@ export default function ContactPage() {
                         placeholder="Tell us about your requirements..."
                       />
                     </div>
-                    <Button type="submit" className="w-full text-sm sm:text-base" size="lg">
-                      Submit Enquiry
+                    <Button type="submit" className="w-full text-sm sm:text-base" size="lg" disabled={isSubmitting || submitSuccess}>
+                      {submitSuccess ? (
+                        <span className="flex items-center gap-2 animate-pulse">
+                          <CheckCircle2 size={20} /> Form Submitted Successfully!
+                        </span>
+                      ) : isSubmitting ? (
+                        <span className="flex items-center gap-2">
+                          <span className="animate-spin">⏳</span> Submitting...
+                        </span>
+                      ) : (
+                        'Submit Enquiry'
+                      )}
                     </Button>
+                    {submitSuccess && (
+                      <p className="text-xs sm:text-sm text-green-600 dark:text-green-500 text-center animate-fade-in">
+                        Thank you! We'll get back to you soon.
+                      </p>
+                    )}
                   </form>
                 </CardContent>
               </Card>

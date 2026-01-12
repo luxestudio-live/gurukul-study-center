@@ -10,6 +10,30 @@ import { useState } from "react"
 
 export default function HomePage() {
   const [showEnquiryForm, setShowEnquiryForm] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+
+  const handleEnquirySubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+    
+    const form = e.currentTarget
+    const formData = new FormData(form)
+    
+    try {
+      await fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        mode: 'no-cors'
+      })
+      
+      // Redirect to YouTube after successful submission
+      window.location.href = 'https://www.youtube.com/@bugadesirsgurukul2025'
+    } catch (error) {
+      console.error('Error:', error)
+      // Still redirect even if there's an error
+      window.location.href = 'https://www.youtube.com/@bugadesirsgurukul2025'
+    }
+  }
 
   const advantages = [
     {
@@ -384,7 +408,7 @@ export default function HomePage() {
                     ✕
                   </button>
                 </div>
-                <form action="https://script.google.com/macros/s/AKfycbxMgEb4mB6SHj99zYz-AYvkzXsAeh-l3jpRrBAk3YMbqR4FYbEMV8ac-bZUCIK4pxGa/exec" method="POST" target="_blank" className="space-y-3 sm:space-y-4">
+                <form action="https://script.google.com/macros/s/AKfycbxMgEb4mB6SHj99zYz-AYvkzXsAeh-l3jpRrBAk3YMbqR4FYbEMV8ac-bZUCIK4pxGa/exec" method="POST" onSubmit={handleEnquirySubmit} className="space-y-3 sm:space-y-4">
                   <input type="hidden" name="form_type" value="Homepage Enquiry" />
                   <div>
                     <label className="block text-xs sm:text-sm font-medium mb-1.5 sm:mb-2">Full Name</label>
@@ -440,8 +464,14 @@ export default function HomePage() {
                       <option>Class 10 - CBSE</option>
                     </select>
                   </div>
-                  <Button type="submit" className="w-full">
-                    Submit Enquiry
+                  <Button type="submit" className="w-full" disabled={isSubmitting}>
+                    {isSubmitting ? (
+                      <span className="flex items-center gap-2">
+                        <span className="animate-spin">⏳</span> Submitting...
+                      </span>
+                    ) : (
+                      'Submit Enquiry'
+                    )}
                   </Button>
                 </form>
               </CardContent>
