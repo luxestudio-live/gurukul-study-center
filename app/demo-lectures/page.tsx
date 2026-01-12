@@ -253,7 +253,11 @@ export default function DemoLecturesPage() {
                 </Card>
               </ScrollReveal>
             ))}
-          </div> onClick={handleDemoClick}>
+          </div>
+          
+          <ScrollReveal delay={300}>
+            <div className="text-center mt-6 sm:mt-8">
+              <Button size="lg" className="w-full sm:w-auto" onClick={handleDemoClick}>
                 {hasSubmittedEnquiry ? 'Watch Demos on YouTube' : 'Submit Enquiry to Access All Demos'}
               </Button>
               <p className="text-xs sm:text-sm text-muted-foreground mt-3 sm:mt-4 px-4">
