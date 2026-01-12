@@ -20,7 +20,7 @@ export default function HomePage() {
     {
       icon: Video,
       title: "Interactive Sessions",
-      description: "Engaging online classes with real-time interaction",
+      description: "Engaging online & offline classes with real-time interaction",
     },
     {
       icon: Users,
@@ -50,7 +50,7 @@ export default function HomePage() {
     {
       name: "Rahul Deshmukh",
       class: "Class 9, CBSE",
-      text: "The online classes are very interactive and convenient. I can now balance my studies with other activities.",
+      text: "The flexible class options (online & offline) are very interactive and convenient. I can now balance my studies with other activities.",
       rating: 5,
     },
     {
@@ -72,7 +72,7 @@ export default function HomePage() {
           <div className="max-w-4xl mx-auto text-center">
             <ScrollReveal>
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-balance mb-4 sm:mb-6 text-foreground leading-tight">
-                Master Mathematics with Expert Online Coaching
+                Master Mathematics with Expert Coaching
               </h1>
             </ScrollReveal>
             <ScrollReveal delay={100}>
@@ -84,7 +84,7 @@ export default function HomePage() {
               <div className="inline-flex items-center gap-2 bg-accent/10 px-4 sm:px-6 py-2 sm:py-3 rounded-full mb-6 sm:mb-8 border border-accent/20">
                 <Award className="text-accent shrink-0" size={18} />
                 <p className="text-xs sm:text-sm font-medium text-pretty">
-                  By Prof. Sambhaji Bugade – M.Sc. Mathematics | 42 Years of Excellence
+                  By Prof. Sambhaji Bugade – Mathematics Expert | 42 Years of Excellence
                 </p>
               </div>
             </ScrollReveal>
@@ -113,7 +113,7 @@ export default function HomePage() {
         <div className="container mx-auto">
           <ScrollReveal>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-center mb-3 sm:mb-4">
-              Advantages of Online Learning
+              Advantages of Our Learning Approach
             </h2>
           </ScrollReveal>
           <ScrollReveal delay={100}>

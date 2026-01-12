@@ -20,8 +20,8 @@ export default function GalleryPage() {
 
   const galleryImages = [
     {
-      title: "Interactive Online Classes",
-      description: "Students engaging with Prof. Bugade during live sessions",
+      title: "Interactive Classes",
+      description: "Students engaging with Prof. Bugade during live online & offline sessions",
       image: "online+mathematics+class+students+learning",
     },
     {

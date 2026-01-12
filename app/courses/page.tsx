@@ -151,7 +151,7 @@ export default function CoursesPage() {
           </ScrollReveal>
           <ScrollReveal delay={100}>
             <p className="text-base sm:text-lg md:text-xl text-muted-foreground text-pretty px-4 max-w-2xl mx-auto">
-              Comprehensive online coaching for Classes 7-10 across SSC, ICSE, and CBSE boards
+              Comprehensive coaching with online & offline classes for Classes 7-10 across SSC, ICSE, and CBSE boards
             </p>
           </ScrollReveal>
         </div>

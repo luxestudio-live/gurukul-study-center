@@ -18,10 +18,10 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: "Gurukul Study Center - Master Mathematics Online",
+  title: "Gurukul Study Center - Master Mathematics with Expert Coaching",
   description:
-    "Expert online mathematics coaching for SSC, ICSE, and CBSE students (Classes 7-10) by Prof. Sambhaji Bugade with 42 years of teaching excellence.",
-  keywords: "online mathematics coaching, SSC maths, ICSE maths, CBSE maths, Prof Sambhaji Bugade, online tuition",
+    "Expert mathematics coaching for SSC, ICSE, and CBSE students (Classes 7-10) with online & offline classes by Prof. Sambhaji Bugade, 42 years of teaching excellence.",
+  keywords: "mathematics coaching, online classes, offline classes, SSC maths, ICSE maths, CBSE maths, Prof Sambhaji Bugade, maths tuition",
     generator: 'v0.app'
 }
 

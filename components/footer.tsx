@@ -10,7 +10,7 @@ export function Footer() {
           <div>
             <h3 className="text-xl font-serif font-bold mb-4">Gurukul Study Center</h3>
             <p className="text-sm text-primary-foreground/80 leading-relaxed">
-              Expert online mathematics coaching for SSC, ICSE, and CBSE students with 42 years of teaching excellence.
+              Expert mathematics coaching for SSC, ICSE, and CBSE students with online and offline classes, backed by 42 years of teaching excellence.
             </p>
           </div>
 
@@ -83,7 +83,7 @@ export function Footer() {
               </li>
               <li className="flex items-start gap-2 text-sm text-primary-foreground/80">
                 <MapPin size={16} className="mt-1 shrink-0" />
-                <span>Online Classes Available Worldwide</span>
+                <span>Online & Offline Classes Available</span>
               </li>
             </ul>
           </div>

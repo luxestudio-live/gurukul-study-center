@@ -59,7 +59,7 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <p className="font-semibold mb-1 text-sm sm:text-base">Location</p>
-                        <p className="text-xs sm:text-sm text-muted-foreground">Online Classes Available Worldwide</p>
+                        <p className="text-xs sm:text-sm text-muted-foreground">Online & Offline Classes Available</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-3 sm:gap-4">
