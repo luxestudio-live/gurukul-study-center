@@ -69,7 +69,11 @@ export default function DemoLecturesPage() {
       document.body.removeChild(iframe)
       localStorage.setItem('enquirySubmitted', 'true')
       setHasSubmittedEnquiry(true)
-      window.location.href = 'https://www.youtube.com/@bugadesirsgurukul2025'
+      // Open YouTube in new window
+      window.open('https://www.youtube.com/@bugadesirsgurukul2025', '_blank')
+      // Close modal and stay on demo lectures page
+      setShowEnquiryForm(false)
+      setIsSubmitting(false)
     }, 1000)
   }
 

@@ -46,7 +46,10 @@ export default function HomePage() {
     setTimeout(() => {
       document.body.removeChild(tempForm)
       document.body.removeChild(iframe)
-      window.location.href = 'https://www.youtube.com/@bugadesirsgurukul2025'
+      // Open YouTube in new window
+      window.open('https://www.youtube.com/@bugadesirsgurukul2025', '_blank')
+      // Redirect to demo lectures page
+      window.location.href = '/demo-lectures'
     }, 1000)
   }
 
