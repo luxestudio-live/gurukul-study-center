@@ -311,11 +311,16 @@ export default function HomePage() {
                     ✕
                   </button>
                 </div>
-                <form className="space-y-3 sm:space-y-4">
+                <form action="https://formsubmit.co/your-email@example.com" method="POST" className="space-y-3 sm:space-y-4">
+                  <input type="hidden" name="_next" value="https://www.youtube.com/@bugadesirsgurukul2025" />
+                  <input type="hidden" name="_subject" value="New Enquiry from Gurukul Study Center" />
+                  <input type="hidden" name="_template" value="table" />
                   <div>
                     <label className="block text-xs sm:text-sm font-medium mb-1.5 sm:mb-2">Full Name</label>
                     <input
                       type="text"
+                      name="name"
+                      required
                       className="w-full px-3 sm:px-4 py-2 sm:py-2.5 text-sm sm:text-base rounded-lg border border-input bg-background focus:outline-none focus:ring-2 focus:ring-ring"
                     />
                   </div>
@@ -323,6 +328,8 @@ export default function HomePage() {
                     <label className="block text-xs sm:text-sm font-medium mb-1.5 sm:mb-2">Email</label>
                     <input
                       type="email"
+                      name="email"
+                      required
                       className="w-full px-3 sm:px-4 py-2 sm:py-2.5 text-sm sm:text-base rounded-lg border border-input bg-background focus:outline-none focus:ring-2 focus:ring-ring"
                     />
                   </div>
@@ -330,12 +337,24 @@ export default function HomePage() {
                     <label className="block text-xs sm:text-sm font-medium mb-1.5 sm:mb-2">Phone</label>
                     <input
                       type="tel"
+                      name="phone"
+                      required
+                      className="w-full px-3 sm:px-4 py-2 sm:py-2.5 text-sm sm:text-base rounded-lg border border-input bg-background focus:outline-none focus:ring-2 focus:ring-ring"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-xs sm:text-sm font-medium mb-1.5 sm:mb-2">City</label>
+                    <input
+                      type="text"
+                      name="city"
+                      required
                       className="w-full px-3 sm:px-4 py-2 sm:py-2.5 text-sm sm:text-base rounded-lg border border-input bg-background focus:outline-none focus:ring-2 focus:ring-ring"
                     />
                   </div>
                   <div>
                     <label className="block text-xs sm:text-sm font-medium mb-1.5 sm:mb-2">Class & Board</label>
-                    <select className="w-full px-3 sm:px-4 py-2 sm:py-2.5 text-sm sm:text-base rounded-lg border border-input bg-background focus:outline-none focus:ring-2 focus:ring-ring">
+                    <select name="class_board" required className="w-full px-3 sm:px-4 py-2 sm:py-2.5 text-sm sm:text-base rounded-lg border border-input bg-background focus:outline-none focus:ring-2 focus:ring-ring">
+                      <option value="">Select your class & board</option>
                       <option>Class 7 - SSC</option>
                       <option>Class 8 - SSC</option>
                       <option>Class 9 - SSC</option>

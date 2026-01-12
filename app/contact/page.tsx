@@ -80,11 +80,15 @@ export default function ContactPage() {
               <Card className="border-none shadow-xl">
                 <CardContent className="p-6 sm:p-8">
                   <h2 className="text-xl sm:text-2xl font-serif font-bold mb-4 sm:mb-6">Send us a Message</h2>
-                  <form className="space-y-3 sm:space-y-4">
+                  <form action="https://formsubmit.co/your-email@example.com" method="POST" className="space-y-3 sm:space-y-4">
+                    <input type="hidden" name="_subject" value="New Contact Form Submission - Gurukul Study Center" />
+                    <input type="hidden" name="_template" value="table" />
                     <div>
                       <label className="block text-xs sm:text-sm font-medium mb-1.5 sm:mb-2">Full Name</label>
                       <input
                         type="text"
+                        name="name"
+                        required
                         className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base rounded-lg border border-input bg-background focus:outline-none focus:ring-2 focus:ring-ring transition-all"
                         placeholder="Your name"
                       />
@@ -93,6 +97,8 @@ export default function ContactPage() {
                       <label className="block text-xs sm:text-sm font-medium mb-1.5 sm:mb-2">Email</label>
                       <input
                         type="email"
+                        name="email"
+                        required
                         className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base rounded-lg border border-input bg-background focus:outline-none focus:ring-2 focus:ring-ring transition-all"
                         placeholder="your@email.com"
                       />
@@ -101,13 +107,25 @@ export default function ContactPage() {
                       <label className="block text-xs sm:text-sm font-medium mb-1.5 sm:mb-2">Phone</label>
                       <input
                         type="tel"
+                        name="phone"
+                        required
                         className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base rounded-lg border border-input bg-background focus:outline-none focus:ring-2 focus:ring-ring transition-all"
                         placeholder="+91 "
                       />
                     </div>
                     <div>
+                      <label className="block text-xs sm:text-sm font-medium mb-1.5 sm:mb-2">City</label>
+                      <input
+                        type="text"
+                        name="city"
+                        required
+                        className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base rounded-lg border border-input bg-background focus:outline-none focus:ring-2 focus:ring-ring transition-all"
+                        placeholder="Your city"
+                      />
+                    </div>
+                    <div>
                       <label className="block text-xs sm:text-sm font-medium mb-1.5 sm:mb-2">Class & Board</label>
-                      <select className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base rounded-lg border border-input bg-background focus:outline-none focus:ring-2 focus:ring-ring transition-all">
+                      <select name="class_board" required className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base rounded-lg border border-input bg-background focus:outline-none focus:ring-2 focus:ring-ring transition-all">
                         <option value="">Select your class & board</option>
                         <option>Class 7 - SSC</option>
                         <option>Class 8 - SSC</option>
@@ -126,6 +144,8 @@ export default function ContactPage() {
                     <div>
                       <label className="block text-xs sm:text-sm font-medium mb-1.5 sm:mb-2">Message</label>
                       <textarea
+                        name="message"
+                        required
                         className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base rounded-lg border border-input bg-background focus:outline-none focus:ring-2 focus:ring-ring transition-all min-h-[100px] sm:min-h-[120px]"
                         placeholder="Tell us about your requirements..."
                       />

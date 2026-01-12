@@ -6,11 +6,38 @@ import { ScrollReveal } from "@/components/scroll-reveal"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Lock, Play, Clock, BookOpen } from "lucide-react"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { getImageUrl } from "@/lib/image-url"
 
 export default function DemoLecturesPage() {
   const [selectedBoard, setSelectedBoard] = useState("SSC")
+  const [showEnquiryForm, setShowEnquiryForm] = useState(false)
+  const [hasSubmittedEnquiry, setHasSubmittedEnquiry] = useState(false)
+
+  useEffect(() => {
+    // Check if user has already submitted enquiry
+    const submitted = localStorage.getItem('enquirySubmitted')
+    if (submitted === 'true') {
+      setHasSubmittedEnquiry(true)
+    }
+  }, [])
+
+  const handleDemoClick = () => {
+    if (hasSubmittedEnquiry) {
+      // Redirect to YouTube if already submitted
+      window.open('https://www.youtube.com/@bugadesirsgurukul2025', '_blank')
+    } else {
+      // Show enquiry form
+      setShowEnquiryForm(true)
+    }
+  }
+
+  const handleFormSubmit = (e: React.FormEvent) => {
+    // Mark as submitted in localStorage
+    localStorage.setItem('enquirySubmitted', 'true')
+    setHasSubmittedEnquiry(true)
+    // Form will redirect to YouTube via FormSubmit
+  }
 
   const lectures = {
     SSC: [
@@ -191,7 +218,10 @@ export default function DemoLecturesPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
             {lectures[selectedBoard as keyof typeof lectures].map((lecture, index) => (
               <ScrollReveal key={index} delay={index * 100}>
-                <Card className="border-none shadow-lg overflow-hidden group cursor-pointer hover:shadow-xl transition-all card-hover">
+                <Card 
+                  className="border-none shadow-lg overflow-hidden group cursor-pointer hover:shadow-xl transition-all card-hover"
+                  onClick={handleDemoClick}
+                >
                   <div className="relative aspect-video bg-gradient-to-br from-primary/20 via-secondary/20 to-accent/20">
                     <img
                       src={getImageUrl("/placeholder.svg")}
@@ -200,10 +230,10 @@ export default function DemoLecturesPage() {
                     />
                     <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 sm:gap-4 bg-background/40 backdrop-blur-sm">
                       <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-background/90 flex items-center justify-center group-hover:scale-110 transition-transform shadow-xl">
-                        <Lock className="text-primary" size={24} />
+                        {hasSubmittedEnquiry ? <Play className="text-primary" size={24} /> : <Lock className="text-primary" size={24} />}
                       </div>
                       <p className="text-xs sm:text-sm font-medium text-foreground bg-background/90 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full shadow-lg">
-                        Submit Enquiry to Unlock
+                        {hasSubmittedEnquiry ? 'Watch on YouTube' : 'Submit Enquiry to Unlock'}
                       </p>
                     </div>
                   </div>
@@ -223,16 +253,99 @@ export default function DemoLecturesPage() {
                 </Card>
               </ScrollReveal>
             ))}
-          </div>
-          <ScrollReveal delay={400}>
-            <div className="text-center mt-8 sm:mt-12">
-              <Button size="lg" className="shadow-lg w-full sm:w-auto text-sm sm:text-base">
-                Submit Enquiry to Access All Demos
+          </div> onClick={handleDemoClick}>
+                {hasSubmittedEnquiry ? 'Watch Demos on YouTube' : 'Submit Enquiry to Access All Demos'}
               </Button>
               <p className="text-xs sm:text-sm text-muted-foreground mt-3 sm:mt-4 px-4">
-                No credit card required • Instant access after enquiry
+                {hasSubmittedEnquiry ? 'Access granted • Watch anytime on YouTube' : 'No credit card required • Instant access after enquiry'}
               </p>
             </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* Enquiry Form Modal */}
+      {showEnquiryForm && (
+        <div className="fixed inset-0 bg-background/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 overflow-y-auto">
+          <ScrollReveal>
+            <Card className="w-full max-w-md shadow-2xl my-8">
+              <CardContent className="p-5 sm:p-6">
+                <div className="flex items-center justify-between mb-5 sm:mb-6">
+                  <h3 className="text-xl sm:text-2xl font-serif font-bold">Enquiry Form</h3>
+                  <button
+                    onClick={() => setShowEnquiryForm(false)}
+                    className="text-muted-foreground hover:text-foreground text-2xl leading-none"
+                  >
+                    ✕
+                  </button>
+                </div>
+                <form action="https://formsubmit.co/your-email@example.com" method="POST" onSubmit={handleFormSubmit} className="space-y-3 sm:space-y-4">
+                  <input type="hidden" name="_next" value="https://www.youtube.com/@bugadesirsgurukul2025" />
+                  <input type="hidden" name="_subject" value="New Demo Access Request - Gurukul Study Center" />
+                  <input type="hidden" name="_template" value="table" />
+                  <div>
+                    <label className="block text-xs sm:text-sm font-medium mb-1.5 sm:mb-2">Full Name</label>
+                    <input
+                      type="text"
+                      name="name"
+                      required
+                      className="w-full px-3 sm:px-4 py-2 sm:py-2.5 text-sm sm:text-base rounded-lg border border-input bg-background focus:outline-none focus:ring-2 focus:ring-ring"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-xs sm:text-sm font-medium mb-1.5 sm:mb-2">Email</label>
+                    <input
+                      type="email"
+                      name="email"
+                      required
+                      className="w-full px-3 sm:px-4 py-2 sm:py-2.5 text-sm sm:text-base rounded-lg border border-input bg-background focus:outline-none focus:ring-2 focus:ring-ring"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-xs sm:text-sm font-medium mb-1.5 sm:mb-2">Phone</label>
+                    <input
+                      type="tel"
+                      name="phone"
+                      required
+                      className="w-full px-3 sm:px-4 py-2 sm:py-2.5 text-sm sm:text-base rounded-lg border border-input bg-background focus:outline-none focus:ring-2 focus:ring-ring"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-xs sm:text-sm font-medium mb-1.5 sm:mb-2">City</label>
+                    <input
+                      type="text"
+                      name="city"
+                      required
+                      className="w-full px-3 sm:px-4 py-2 sm:py-2.5 text-sm sm:text-base rounded-lg border border-input bg-background focus:outline-none focus:ring-2 focus:ring-ring"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-xs sm:text-sm font-medium mb-1.5 sm:mb-2">Class & Board</label>
+                    <select name="class_board" required className="w-full px-3 sm:px-4 py-2 sm:py-2.5 text-sm sm:text-base rounded-lg border border-input bg-background focus:outline-none focus:ring-2 focus:ring-ring">
+                      <option value="">Select your class & board</option>
+                      <option>Class 7 - SSC</option>
+                      <option>Class 8 - SSC</option>
+                      <option>Class 9 - SSC</option>
+                      <option>Class 10 - SSC</option>
+                      <option>Class 7 - ICSE</option>
+                      <option>Class 8 - ICSE</option>
+                      <option>Class 9 - ICSE</option>
+                      <option>Class 10 - ICSE</option>
+                      <option>Class 7 - CBSE</option>
+                      <option>Class 8 - CBSE</option>
+                      <option>Class 9 - CBSE</option>
+                      <option>Class 10 - CBSE</option>
+                    </select>
+                  </div>
+                  <Button type="submit" className="w-full">
+                    Submit & Watch Demos
+                  </Button>
+                </form>
+              </CardContent>
+            </Card>
+          </ScrollReveal>
+        </div>
+      )}v>
           </ScrollReveal>
         </div>
       </section>

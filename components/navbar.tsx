@@ -55,9 +55,11 @@ export function Navbar() {
                 {link.label}
               </Link>
             ))}
-            <Button size="sm" className="ml-4">
-              Watch Demo
-            </Button>
+            <Link href="/demo-lectures">
+              <Button size="sm" className="ml-4">
+                Watch Demo
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -80,9 +82,11 @@ export function Navbar() {
                   {link.label}
                 </Link>
               ))}
-              <Button size="sm" className="mt-2">
-                Watch Demo
-              </Button>
+              <Link href="/demo-lectures" className="w-full">
+                <Button className="w-full" size="sm">
+                  Watch Demo
+                </Button>
+              </Link>
             </div>
           </div>
         )}
