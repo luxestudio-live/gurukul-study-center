@@ -1,34 +1,35 @@
+"use client"
+
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { ScrollReveal } from "@/components/scroll-reveal"
 import { Card, CardContent } from "@/components/ui/card"
-import { Award, TrendingUp, Users } from "lucide-react"
+import { Award, TrendingUp, Users, X } from "lucide-react"
 import { getImageUrl } from "@/lib/image-url"
+import { useState } from "react"
 
 export default function GalleryPage() {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null)
+
   const results = [
-    { name: "Sneha Kulkarni", percentage: "98%", board: "SSC", year: "2024", subject: "Mathematics" },
-    { name: "Arjun Mehta", percentage: "96%", board: "ICSE", year: "2024", subject: "Mathematics" },
-    { name: "Pooja Desai", percentage: "97%", board: "CBSE", year: "2024", subject: "Mathematics" },
-    { name: "Rohan Patil", percentage: "95%", board: "SSC", year: "2023", subject: "Mathematics" },
-    { name: "Ananya Shah", percentage: "99%", board: "ICSE", year: "2023", subject: "Mathematics" },
-    { name: "Vikram Singh", percentage: "96%", board: "CBSE", year: "2023", subject: "Mathematics" },
-    { name: "Priya Joshi", percentage: "94%", board: "SSC", year: "2024", subject: "Mathematics" },
-    { name: "Karan Patel", percentage: "97%", board: "ICSE", year: "2024", subject: "Mathematics" },
-    { name: "Meera Reddy", percentage: "98%", board: "CBSE", year: "2023", subject: "Mathematics" },
+    { name: "Shreya Ajay Sarda", percentage: "98.60%", score: "100/100", board: "SSC", year: "2024", subject: "Mathematics" },
+    { name: "Shruti Ajay Sarda", percentage: "96.40%", score: "99/100", board: "SSC", year: "2024", subject: "Mathematics" },
+    { name: "Tushar Nivas Patil", percentage: "94.60%", score: "98/100", board: "SSC", year: "2024", subject: "Mathematics" },
+    { name: "Parth Nagesh Kage", percentage: "94.00%", score: "98/100", board: "SSC", year: "2024", subject: "Mathematics" },
+    { name: "Amey Sanjay Powar", percentage: "92.80%", score: "96/100", board: "SSC", year: "2024", subject: "Mathematics" },
   ]
 
   const galleryImages = [
-    { image: "gsc.jpeg", title: "Gurukul Study Center", description: "Our vibrant learning environment" },
-    { image: "gsc1.jpeg", title: "Mathematics Excellence", description: "Students achieving their best" },
-    { image: "gsc2.jpeg", title: "Learning Together", description: "Collaborative study sessions" },
-    { image: "gsc3.jpeg", title: "Success Stories", description: "Celebrating academic achievements" },
-    { image: "gsc4.jpeg", title: "Interactive Sessions", description: "Engaging classroom experiences" },
-    { image: "gsc5.jpeg", title: "Expert Guidance", description: "Prof. Bugade's teaching excellence" },
-    { image: "gsc6.jpeg", title: "Student Community", description: "Building strong foundations together" },
-    { image: "gsc7.jpeg", title: "Achievement Day", description: "Recognizing outstanding performers" },
-    { image: "gsc8.jpeg", title: "Learning Journey", description: "Every step towards success" },
-    { image: "gsc9.jpeg", title: "Proud Moments", description: "Celebrating milestones with students" },
+    { image: "gsc.jpeg" },
+    { image: "gsc1.jpeg" },
+    { image: "gsc2.jpeg" },
+    { image: "gsc3.jpeg" },
+    { image: "gsc4.jpeg" },
+    { image: "gsc5.jpeg" },
+    { image: "gsc6.jpeg" },
+    { image: "gsc7.jpeg" },
+    { image: "gsc8.jpeg" },
+    { image: "gsc9.jpeg" },
   ]
 
   const stats = [
@@ -88,31 +89,51 @@ export default function GalleryPage() {
               Glimpses of our vibrant learning community and special moments
             </p>
           </ScrollReveal>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
             {galleryImages.map((item, index) => (
               <ScrollReveal key={index} delay={index * 50}>
-                <Card className="border-none shadow-lg overflow-hidden group hover:shadow-2xl transition-all duration-500 card-hover">
-                  <div className="relative aspect-[4/3] overflow-hidden bg-gradient-to-br from-primary/5 to-accent/5">
-                    <img
-                      src={getImageUrl(`/${item.image}`)}
-                      alt={item.title}
-                      className="w-full h-full object-cover group-hover:scale-110 group-hover:rotate-1 transition-all duration-700 ease-out"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div 
+                  className="relative aspect-square overflow-hidden rounded-lg cursor-pointer group shadow-md hover:shadow-2xl transition-all duration-300"
+                  onClick={() => setSelectedImage(getImageUrl(`/${item.image}`))}
+                >
+                  <img
+                    src={getImageUrl(`/${item.image}`)}
+                    alt={`Gallery image ${index + 1}`}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ease-out"
+                  />
+                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <span className="text-white text-sm font-medium bg-black/50 px-4 py-2 rounded-full backdrop-blur-sm">
+                      Click to view
+                    </span>
                   </div>
-                  <CardContent className="p-5 relative">
-                    <div className="absolute -top-4 right-4 w-8 h-8 bg-primary rounded-full shadow-lg flex items-center justify-center text-white text-xs font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      {index + 1}
-                    </div>
-                    <h3 className="font-bold mb-2 text-base group-hover:text-primary transition-colors duration-300">{item.title}</h3>
-                    <p className="text-sm text-muted-foreground text-pretty leading-relaxed">{item.description}</p>
-                  </CardContent>
-                </Card>
+                </div>
               </ScrollReveal>
             ))}
           </div>
         </div>
       </section>
+
+      {/* Image Zoom Modal */}
+      {selectedImage && (
+        <div 
+          className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4 animate-in fade-in duration-300"
+          onClick={() => setSelectedImage(null)}
+        >
+          <button
+            onClick={() => setSelectedImage(null)}
+            className="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors z-10"
+            aria-label="Close"
+          >
+            <X size={32} />
+          </button>
+          <img
+            src={selectedImage}
+            alt="Zoomed gallery image"
+            className="max-w-full max-h-full object-contain animate-in zoom-in duration-300"
+            onClick={(e) => e.stopPropagation()}
+          />
+        </div>
+      )}
 
       {/* Results Section */}
       <section className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 bg-muted/30">
@@ -130,8 +151,9 @@ export default function GalleryPage() {
               <ScrollReveal key={index} delay={index * 100}>
                 <Card className="border-none shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 card-hover">
                   <CardContent className="p-5 sm:p-6 text-center">
-                    <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-gradient-to-br from-primary via-secondary to-accent mx-auto mb-3 sm:mb-4 flex items-center justify-center shadow-lg">
+                    <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-gradient-to-br from-primary via-secondary to-accent mx-auto mb-3 sm:mb-4 flex flex-col items-center justify-center shadow-lg">
                       <span className="text-xl sm:text-2xl font-bold text-primary-foreground">{result.percentage}</span>
+                      <span className="text-[10px] sm:text-xs text-primary-foreground/90 font-medium">{result.score}</span>
                     </div>
                     <h3 className="font-bold text-base sm:text-lg mb-1">{result.name}</h3>
                     <p className="text-xs sm:text-sm text-muted-foreground mb-2">
