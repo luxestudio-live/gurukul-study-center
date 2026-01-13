@@ -135,12 +135,12 @@ export default function HomePage() {
                 <Button
                   size="lg"
                   className="text-sm sm:text-base shadow-lg hover:shadow-xl transition-shadow w-full sm:w-auto"
-                  onClick={() => window.location.href = '/contact'}
+                  onClick={() => window.location.href = '/gurukul-study-center/contact'}
                 >
                   Start Learning Today
                   <ArrowRight className="ml-2" size={18} />
                 </Button>
-                <Button size="lg" variant="outline" className="text-sm sm:text-base bg-transparent w-full sm:w-auto" onClick={() => window.location.href = '/demo-lectures'}>
+                <Button size="lg" variant="outline" className="text-sm sm:text-base bg-transparent w-full sm:w-auto" onClick={() => window.location.href = '/gurukul-study-center/demo-lectures'}>
                   <Video className="mr-2" size={18} />
                   Watch Demo
                 </Button>
