@@ -115,6 +115,10 @@ export default function AboutPage() {
                     approach. His teaching methodology focuses on building strong fundamentals, developing
                     problem-solving skills, and nurturing a genuine appreciation for the subject.
                   </p>
+                  <p className="text-pretty bg-primary/5 border-l-4 border-primary p-3 sm:p-4 rounded">
+                    Mr. Bugade Sir has developed his own Mathematics software, which uses interactive animations to explain complex mathematical concepts.
+                    This unique teaching method helps students visualize problems clearly, improves understanding, and increases interest in learning Mathematics.
+                  </p>
                   <p className="text-pretty italic">
                     "Mathematics is not about memorizing formulas, it's about understanding patterns and developing
                     logical thinking. My goal is to make every student fall in love with mathematics."
