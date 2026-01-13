@@ -151,6 +151,21 @@ export default function FeesPage() {
         </div>
       </section>
 
+      {/* GST Note */}
+      <section className="py-6 px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto max-w-7xl">
+          <ScrollReveal>
+            <Card className="border-amber-200 dark:border-amber-800 bg-amber-50/50 dark:bg-amber-950/20">
+              <CardContent className="p-4 sm:p-6">
+                <p className="text-sm sm:text-base text-center text-muted-foreground">
+                  <span className="font-semibold">Note:</span> All fees mentioned above are exclusive of GST. GST will be added as applicable.
+                </p>
+              </CardContent>
+            </Card>
+          </ScrollReveal>
+        </div>
+      </section>
+
       {/* Benefits Section */}
       <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-muted/30">
         <div className="container mx-auto max-w-6xl">
