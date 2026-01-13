@@ -112,7 +112,7 @@ export default function ContactPage() {
                       <div>
                         <p className="font-semibold mb-1 text-sm sm:text-base">Email</p>
                         <p className="text-xs sm:text-sm text-muted-foreground break-all">
-                          info@gurukulstudycenter.com
+                          info@gurukulstudycenter.in
                         </p>
                       </div>
                     </div>
