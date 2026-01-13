@@ -140,7 +140,7 @@ export default function HomePage() {
                   Start Learning Today
                   <ArrowRight className="ml-2" size={18} />
                 </Button>
-                <Button size="lg" variant="outline" className="text-sm sm:text-base bg-transparent w-full sm:w-auto" onClick={() => window.location.href = '/gurukul-study-center/demo-lectures'}>
+                <Button size="lg" variant="outline" className="text-sm sm:text-base bg-transparent w-full sm:w-auto" onClick={() => window.location.href = '/demo-lectures'}>
                   <Video className="mr-2" size={18} />
                   Watch Demo
                 </Button>
