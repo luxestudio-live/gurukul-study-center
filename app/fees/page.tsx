@@ -48,7 +48,7 @@ export default function FeesPage() {
     "Regular assessments & progress reports",
     "Access to recorded lectures",
     "Flexible payment options available",
-    "Sibling discount applicable",
+    "Need based discount applicable",
   ]
 
   return (
