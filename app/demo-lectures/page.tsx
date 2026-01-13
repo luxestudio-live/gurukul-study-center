@@ -168,6 +168,36 @@ export default function DemoLecturesPage() {
         thumbnail: "linear+equations+intersecting+lines",
       },
     ],
+    "Vedic Maths": [
+      {
+        class: "All Classes",
+        title: "Speed Multiplication Techniques",
+        duration: "15 min",
+        description: "Learn ancient Vedic methods to multiply numbers quickly",
+        thumbnail: "vedic+mathematics+multiplication+techniques",
+      },
+      {
+        class: "All Classes",
+        title: "Mental Calculation Tricks",
+        duration: "18 min",
+        description: "Master the art of solving complex calculations mentally",
+        thumbnail: "mental+math+calculation+brain+power",
+      },
+      {
+        class: "All Classes",
+        title: "Square and Cube Shortcuts",
+        duration: "16 min",
+        description: "Discover fast methods for calculating squares and cubes",
+        thumbnail: "vedic+math+squares+cubes+shortcuts",
+      },
+      {
+        class: "All Classes",
+        title: "Division Made Easy",
+        duration: "14 min",
+        description: "Simplify division using time-tested Vedic sutras",
+        thumbnail: "vedic+division+techniques+mathematics",
+      },
+    ],
   }
 
   return (
@@ -189,7 +219,7 @@ export default function DemoLecturesPage() {
           </ScrollReveal>
           <ScrollReveal delay={200}>
             <div className="flex justify-center gap-2 sm:gap-4 flex-wrap">
-              {["SSC", "ICSE", "CBSE"].map((board) => (
+              {["SSC", "ICSE", "CBSE", "Vedic Maths"].map((board) => (
                 <Button
                   key={board}
                   variant={selectedBoard === board ? "default" : "outline"}
