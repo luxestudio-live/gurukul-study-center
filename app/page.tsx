@@ -84,20 +84,20 @@ export default function HomePage() {
 
   const testimonials = [
     {
-      name: "Priya Sharma",
-      class: "Class 10, SSC",
+      name: "Shreya Ajay Sarda",
+      class: "Class 10",
       text: "Prof. Bugade's teaching method made complex topics so easy to understand. I scored 98% in Mathematics!",
       rating: 5,
     },
     {
-      name: "Rahul Deshmukh",
-      class: "Class 9, CBSE",
+      name: "Tushar Nivas Patil",
+      class: "Class 10",
       text: "The flexible class options (online & offline) are very interactive and convenient. I can now balance my studies with other activities.",
       rating: 5,
     },
     {
-      name: "Ananya Patil",
-      class: "Class 10, ICSE",
+      name: "Parth Nagesh Kage",
+      class: "Class 10",
       text: "Best mathematics coaching I've experienced. The demo lectures helped me understand the teaching style before enrolling.",
       rating: 5,
     },
@@ -135,12 +135,12 @@ export default function HomePage() {
                 <Button
                   size="lg"
                   className="text-sm sm:text-base shadow-lg hover:shadow-xl transition-shadow w-full sm:w-auto"
-                  onClick={() => setShowEnquiryForm(true)}
+                  onClick={() => window.location.href = '/contact'}
                 >
                   Start Learning Today
                   <ArrowRight className="ml-2" size={18} />
                 </Button>
-                <Button size="lg" variant="outline" className="text-sm sm:text-base bg-transparent w-full sm:w-auto">
+                <Button size="lg" variant="outline" className="text-sm sm:text-base bg-transparent w-full sm:w-auto" onClick={() => window.location.href = '/demo-lectures'}>
                   <Video className="mr-2" size={18} />
                   Watch Demo
                 </Button>

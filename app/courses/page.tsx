@@ -224,7 +224,7 @@ export default function CoursesPage() {
                 </div>
               </ScrollReveal>
               <ScrollReveal delay={400}>
-                <Button size="lg" variant="secondary" className="w-full sm:w-auto">
+                <Button size="lg" variant="secondary" className="w-full sm:w-auto" onClick={() => window.location.href = '/demo-lectures'}>
                   Explore Vedic Mathematics
                 </Button>
               </ScrollReveal>
@@ -345,6 +345,7 @@ export default function CoursesPage() {
                         <Button
                           variant="outline"
                           className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors bg-transparent text-xs sm:text-sm"
+                          onClick={() => window.location.href = '/demo-lectures'}
                         >
                           View Demo Lecture
                         </Button>
