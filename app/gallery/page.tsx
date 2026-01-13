@@ -30,6 +30,7 @@ export default function GalleryPage() {
     { image: "gsc7.jpeg" },
     { image: "gsc8.jpeg" },
     { image: "gsc9.jpeg" },
+    { image: "gsc10.jpeg" },
   ]
 
   const stats = [
