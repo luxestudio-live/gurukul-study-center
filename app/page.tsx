@@ -84,19 +84,19 @@ export default function HomePage() {
 
   const testimonials = [
     {
-      name: "Shreya Ajay Sarda",
+      name: "Shreya Ajay Sarda (Math: 100/100)",
       class: "Class 10",
       text: "I am extremely happy to share that I have secured 100 out of 100 marks in Mathematics in my 10th Board examination. This success is possible only because of your dedicated teaching, patience, and continuous encouragement. Your innovative Software Animations methods and clear concepts helped me build strong confidence in mathematics.",
       rating: 5,
     },
     {
-      name: "Shruti Ajay Sarada",
+      name: "Shruti Ajay Sarada (Math: 99/100)",
       class: "Class 10",
       text: "Thank you very much for your guidance and encouragement. Because of your wonderful teaching and support, I was able to score 99/100 in Mathematics in my 10th Board exam. Your clear explanations and motivation made learning easy and enjoyable. I am truly grateful to you.",
       rating: 5,
     },
     {
-      name: "Tushar Niwas Patil",
+      name: "Tushar Niwas Patil (Math: 98/100)",
       class: "Class 10",
       text: "I am happy to share my success with you. I scored 98 marks in Mathematics in my 10th Board exam, and this achievement is because of your hard work, patience, and inspiring teaching. Thank you for guiding me and always encouraging me to do my best.",
       rating: 5,
