@@ -86,19 +86,19 @@ export default function HomePage() {
     {
       name: "Shreya Ajay Sarda",
       class: "Class 10",
-      text: "Prof. Bugade's teaching method made complex topics so easy to understand. I scored 98% in Mathematics!",
+      text: "I am extremely happy to share that I have secured 100 out of 100 marks in Mathematics in my 10th Board examination. This success is possible only because of your dedicated teaching, patience, and continuous encouragement. Your innovative Software Animations methods and clear concepts helped me build strong confidence in mathematics.",
       rating: 5,
     },
     {
-      name: "Tushar Nivas Patil",
+      name: "Shruti Ajay Sarada",
       class: "Class 10",
-      text: "The flexible class options (online & offline) are very interactive and convenient. I can now balance my studies with other activities.",
+      text: "Thank you very much for your guidance and encouragement. Because of your wonderful teaching and support, I was able to score 99/100 in Mathematics in my 10th Board exam. Your clear explanations and motivation made learning easy and enjoyable. I am truly grateful to you.",
       rating: 5,
     },
     {
-      name: "Parth Nagesh Kage",
+      name: "Tushar Niwas Patil",
       class: "Class 10",
-      text: "Best mathematics coaching I've experienced. The demo lectures helped me understand the teaching style before enrolling.",
+      text: "I am happy to share my success with you. I scored 98 marks in Mathematics in my 10th Board exam, and this achievement is because of your hard work, patience, and inspiring teaching. Thank you for guiding me and always encouraging me to do my best.",
       rating: 5,
     },
   ]
