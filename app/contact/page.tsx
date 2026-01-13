@@ -121,8 +121,11 @@ export default function ContactPage() {
                         <MapPin size={18} className="text-primary sm:w-5 sm:h-5" />
                       </div>
                       <div>
-                        <p className="font-semibold mb-1 text-sm sm:text-base">Location</p>
-                        <p className="text-xs sm:text-sm text-muted-foreground">Online & Offline Classes Available</p>
+                        <p className="font-semibold mb-1 text-sm sm:text-base">Address</p>
+                        <p className="text-xs sm:text-sm text-muted-foreground">
+                          A/21, Mai Mauli CHS, Near Goandevi Mandir, Manpada Rd, Dombivali E, 421201
+                        </p>
+                        <p className="text-xs sm:text-sm text-muted-foreground mt-2 italic">Online & Offline Classes Available</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-3 sm:gap-4">
