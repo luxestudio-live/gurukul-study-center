@@ -6,20 +6,21 @@ import { Clock, Calendar, BookOpen } from "lucide-react"
 
 export default function TimetablePage() {
   const morningSlots = [
-    { time: "6:45 am - 7.55 am", mon: "10th State M1", tue: "10th State M2", wed: "10th State M1", thu: "10th State M2", fri: "10th State M1", sat: "10th State M2", sun: "" },
-    { time: "8.05 am - 9.05 am", mon: "9th State M1", tue: "9th State M2", wed: "9th State M1", thu: "9th State M2", fri: "9th State M1", sat: "9th State M2", sun: "" },
-    { time: "9.15 am - 10.15 am", mon: "7th State", tue: "8th State", wed: "7th State", thu: "8th State", fri: "Vedic", sat: "Vedic", sun: "EXAM" },
-  ]
+    { time: "6.45 am to 7.55 am", mon: "10th State Eng Med.", tue: "10th State Semi-Eng", wed: "10th State Eng Med.", thu: "10th State Semi-Eng", fri: "10th State Eng Med.", sat: "10th State Semi-Eng", sun: "" },
+    { time: "8.00 am to 9.00 am", mon: "9th State Eng Med.", tue: "9th State Semi-Eng", wed: "9th State Eng Med.", thu: "9th State Semi-Eng", fri: "9th State Eng Med.", sat: "9th State Semi-Eng", sun: "" },
+    { time: "9.05 am to 10.05 am", mon: "8th State Eng Med.", tue: "8th State Semi-Eng", wed: "7th State Eng Med.", thu: "8th State Eng Med.", fri: "8th State Semi-Eng", sat: "7th State Semi-Eng", sun: "EXAM" },
+  ];
 
   const eveningSlots = [
-    { time: "4.00 pm - 5.00 pm", mon: "7th ICSE", tue: "7th CBSE", wed: "7th ICSE", thu: "7th CBSE", fri: "Vedic", sat: "Vedic", sun: "" },
-    { time: "5.10 pm - 6.10 pm", mon: "8th ICSE", tue: "8th CBSE", wed: "8th ICSE", thu: "8th CBSE", fri: "8th ICSE", sat: "8th CBSE", sun: "" },
-    { time: "6.20 pm - 7.20 pm", mon: "9th ICSE", tue: "9th CBSE", wed: "9th ICSE", thu: "9th CBSE", fri: "9th ICSE", sat: "9th CBSE", sun: "" },
-    { time: "7.30 pm - 8.50 pm", mon: "10th ICSE", tue: "10th CBSE", wed: "10th ICSE", thu: "10th CBSE", fri: "10th ICSE", sat: "10th CBSE", sun: "" },
-  ]
+    { time: "3.45 pm to 4.45 pm", mon: "7th ICSE", tue: "7th CBSE", wed: "7th ICSE", thu: "7th CBSE", fri: "7th ICSE", sat: "7th CBSE", sun: "" },
+    { time: "4.50 pm to 5.50 pm", mon: "8th ICSE", tue: "8th CBSE", wed: "8th ICSE", thu: "8th CBSE", fri: "8th ICSE", sat: "8th CBSE", sun: "" },
+    { time: "5.55 pm to 6.55 pm", mon: "9th ICSE", tue: "9th CBSE", wed: "9th ICSE", thu: "9th CBSE", fri: "9th ICSE", sat: "9th CBSE", sun: "" },
+    { time: "7.00 pm to 8.10 pm", mon: "10th ICSE", tue: "10th CBSE", wed: "10th ICSE", thu: "10th CBSE", fri: "10th ICSE", sat: "10th CBSE", sun: "" },
+    { time: "8.15 pm to 9.15 pm", mon: "Vedic E1", tue: "Vedic E2", wed: "Vedic E3", thu: "Vedic E1", fri: "Vedic E2", sat: "Vedic E3", sun: "" },
+  ];
 
   const weekDays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
-  const shortDays = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"]
+  const shortDays = ["MON", "TUS", "WED", "THU", "FRI", "SAT", "SUN"]
 
   return (
     <div className="min-h-screen">

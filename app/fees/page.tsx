@@ -6,11 +6,79 @@ import { Button } from "@/components/ui/button"
 import { IndianRupee, CheckCircle2, Award, TrendingDown } from "lucide-react"
 
 export default function FeesPage() {
-  const feeStructure = [
+  // Online Tuition Fees
+  const onlineFees = [
     {
       board: "STATE",
       color: "from-green-500 to-green-600",
-      bgColor: "from-green-50 to-green-100 dark:from-green-950 dark:to-green-900",
+      classes: [
+        { standard: "7th", monthly: "700", yearly: "6,025" },
+        { standard: "8th", monthly: "800", yearly: "7,025" },
+        { standard: "9th", monthly: "1,000", yearly: "8,525" },
+        { standard: "10th", monthly: "1,200", yearly: "10,025" },
+      ],
+    },
+    {
+      board: "CBSE",
+      color: "from-blue-500 to-blue-600",
+      classes: [
+        { standard: "7th", monthly: "800", yearly: "7,025" },
+        { standard: "8th", monthly: "900", yearly: "8,025" },
+        { standard: "9th", monthly: "1,100", yearly: "9,525" },
+        { standard: "10th", monthly: "1,300", yearly: "11,025" },
+      ],
+    },
+    {
+      board: "ICSE",
+      color: "from-purple-500 to-purple-600",
+      classes: [
+        { standard: "7th", monthly: "1,000", yearly: "8,525" },
+        { standard: "8th", monthly: "1,100", yearly: "9,525" },
+        { standard: "9th", monthly: "1,200", yearly: "10,525" },
+        { standard: "10th", monthly: "1,400", yearly: "11,025" },
+      ],
+    },
+  ];
+
+  // Notes & Video Course on App Fees
+  const appFees = [
+    {
+      board: "STATE",
+      color: "from-green-500 to-green-600",
+      classes: [
+        { standard: "7th", yearly: "1,500" },
+        { standard: "8th", yearly: "1,700" },
+        { standard: "9th", yearly: "1,900" },
+        { standard: "10th", yearly: "2,100" },
+      ],
+    },
+    {
+      board: "CBSE",
+      color: "from-blue-500 to-blue-600",
+      classes: [
+        { standard: "7th", yearly: "1,600" },
+        { standard: "8th", yearly: "1,800" },
+        { standard: "9th", yearly: "2,000" },
+        { standard: "10th", yearly: "2,200" },
+      ],
+    },
+    {
+      board: "ICSE",
+      color: "from-purple-500 to-purple-600",
+      classes: [
+        { standard: "7th", yearly: "1,700" },
+        { standard: "8th", yearly: "1,900" },
+        { standard: "9th", yearly: "2,100" },
+        { standard: "10th", yearly: "2,300" },
+      ],
+    },
+  ];
+
+  // Offline Tuition Fees
+  const offlineFees = [
+    {
+      board: "STATE",
+      color: "from-green-500 to-green-600",
       classes: [
         { standard: "7th", monthly: "2,200", yearly: "20,000" },
         { standard: "8th", monthly: "2,400", yearly: "21,000" },
@@ -21,7 +89,6 @@ export default function FeesPage() {
     {
       board: "CBSE",
       color: "from-blue-500 to-blue-600",
-      bgColor: "from-blue-50 to-blue-100 dark:from-blue-950 dark:to-blue-900",
       classes: [
         { standard: "7th", monthly: "2,300", yearly: "21,000" },
         { standard: "8th", monthly: "2,500", yearly: "22,000" },
@@ -32,7 +99,6 @@ export default function FeesPage() {
     {
       board: "ICSE",
       color: "from-purple-500 to-purple-600",
-      bgColor: "from-purple-50 to-purple-100 dark:from-purple-950 dark:to-purple-900",
       classes: [
         { standard: "7th", monthly: "2,500", yearly: "21,000" },
         { standard: "8th", monthly: "3,000", yearly: "26,000" },
@@ -40,7 +106,7 @@ export default function FeesPage() {
         { standard: "10th", monthly: "4,000", yearly: "36,000" },
       ],
     },
-  ]
+  ];
 
   const benefits = [
     "One-on-one doubt clearing sessions",
@@ -77,28 +143,18 @@ export default function FeesPage() {
         </div>
       </section>
 
-      {/* Savings Banner */}
-      <section className="py-8 px-4 sm:px-6 lg:px-8">
-        <div className="container mx-auto max-w-4xl">
-          <ScrollReveal>
-            <Card className="border-none shadow-xl bg-gradient-to-r from-accent/20 via-secondary/20 to-primary/20">
-              <CardContent className="p-6 sm:p-8 text-center">
-                <TrendingDown className="w-12 h-12 mx-auto mb-4 text-primary" />
-                <h3 className="text-xl sm:text-2xl font-bold mb-2">Save with Yearly Plan</h3>
-                <p className="text-muted-foreground">
-                  Pay annually and save up to 2 months of fees! Get the best value for quality education.
-                </p>
-              </CardContent>
-            </Card>
-          </ScrollReveal>
-        </div>
-      </section>
 
-      {/* Fee Cards */}
+
+
+
+      {/* Online Tuition Fees Section */}
       <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
         <div className="container mx-auto max-w-7xl">
+          <ScrollReveal>
+            <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-center">Online Tuition Fees <span className="text-base font-normal">(Only 60 Students)</span></h2>
+          </ScrollReveal>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
-            {feeStructure.map((board, boardIdx) => (
+            {onlineFees.map((board, boardIdx) => (
               <ScrollReveal key={board.board} delay={boardIdx * 100}>
                 <Card className="border-none shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 overflow-hidden">
                   <div className={`h-3 bg-gradient-to-r ${board.color}`}></div>
@@ -109,13 +165,9 @@ export default function FeesPage() {
                       </h2>
                       <p className="text-sm text-muted-foreground">Classes 7th to 10th</p>
                     </div>
-
                     <div className="space-y-4">
                       {board.classes.map((cls, clsIdx) => (
-                        <div
-                          key={cls.standard}
-                          className={`bg-gradient-to-br ${board.bgColor} rounded-lg p-4 transition-all duration-300 hover:scale-105`}
-                        >
+                        <div key={cls.standard} className={`bg-gradient-to-br rounded-lg p-4 transition-all duration-300 hover:scale-105`}>
                           <div className="flex items-center justify-between mb-3">
                             <span className="font-bold text-lg">{cls.standard} Standard</span>
                             <Award className="text-primary" size={20} />
@@ -139,10 +191,103 @@ export default function FeesPage() {
                         </div>
                       ))}
                     </div>
+                  </CardContent>
+                </Card>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
 
-                    <Button className="w-full mt-6" size="lg">
-                      Enroll Now
-                    </Button>
+      {/* Notes & Video Course on App Section */}
+      <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto max-w-7xl">
+          <ScrollReveal>
+            <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-center">Notes & Video Course on App</h2>
+          </ScrollReveal>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
+            {appFees.map((board, boardIdx) => (
+              <ScrollReveal key={board.board} delay={boardIdx * 100}>
+                <Card className="border-none shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 overflow-hidden">
+                  <div className={`h-3 bg-gradient-to-r ${board.color}`}></div>
+                  <CardContent className="p-6 sm:p-8">
+                    <div className="text-center mb-6">
+                      <h2 className={`text-2xl sm:text-3xl font-bold mb-2 bg-gradient-to-r ${board.color} bg-clip-text text-transparent`}>
+                        {board.board} Board
+                      </h2>
+                      <p className="text-sm text-muted-foreground">Classes 7th to 10th</p>
+                    </div>
+                    <div className="space-y-4">
+                      {board.classes.map((cls, clsIdx) => (
+                        <div key={cls.standard} className={`bg-gradient-to-br rounded-lg p-4 transition-all duration-300 hover:scale-105`}>
+                          <div className="flex items-center justify-between mb-3">
+                            <span className="font-bold text-lg">{cls.standard} Standard</span>
+                            <Award className="text-primary" size={20} />
+                          </div>
+                          <div className="grid grid-cols-1 gap-3">
+                            <div className="bg-background/60 rounded-lg p-3 text-center">
+                              <p className="text-xs text-muted-foreground mb-1">Yearly</p>
+                              <p className="text-lg font-bold flex items-center justify-center gap-1">
+                                <IndianRupee size={16} />
+                                {cls.yearly}
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Offline Tuition Fees Section */}
+      <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto max-w-7xl">
+          <ScrollReveal>
+            <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-center">Offline Tuition Fees <span className="text-base font-normal">(Only 20 Students)</span></h2>
+          </ScrollReveal>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
+            {offlineFees.map((board, boardIdx) => (
+              <ScrollReveal key={board.board} delay={boardIdx * 100}>
+                <Card className="border-none shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 overflow-hidden">
+                  <div className={`h-3 bg-gradient-to-r ${board.color}`}></div>
+                  <CardContent className="p-6 sm:p-8">
+                    <div className="text-center mb-6">
+                      <h2 className={`text-2xl sm:text-3xl font-bold mb-2 bg-gradient-to-r ${board.color} bg-clip-text text-transparent`}>
+                        {board.board} Board
+                      </h2>
+                      <p className="text-sm text-muted-foreground">Classes 7th to 10th</p>
+                    </div>
+                    <div className="space-y-4">
+                      {board.classes.map((cls, clsIdx) => (
+                        <div key={cls.standard} className={`bg-gradient-to-br rounded-lg p-4 transition-all duration-300 hover:scale-105`}>
+                          <div className="flex items-center justify-between mb-3">
+                            <span className="font-bold text-lg">{cls.standard} Standard</span>
+                            <Award className="text-primary" size={20} />
+                          </div>
+                          <div className="grid grid-cols-2 gap-3">
+                            <div className="bg-background/60 rounded-lg p-3 text-center">
+                              <p className="text-xs text-muted-foreground mb-1">Monthly</p>
+                              <p className="text-lg font-bold flex items-center justify-center gap-1">
+                                <IndianRupee size={16} />
+                                {cls.monthly}
+                              </p>
+                            </div>
+                            <div className="bg-background/60 rounded-lg p-3 text-center">
+                              <p className="text-xs text-muted-foreground mb-1">Yearly</p>
+                              <p className="text-lg font-bold flex items-center justify-center gap-1">
+                                <IndianRupee size={16} />
+                                {cls.yearly}
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
                   </CardContent>
                 </Card>
               </ScrollReveal>
